@@ -31,8 +31,10 @@ public class StudentService {
     Database database;
 
     public GetStudentResponse get(Long number) {
-        studentRepository.get(number).orElseThrow(() -> new NotFoundException("student not found, number=" + number));
-        return new GetStudentResponse();
+        Student student = studentRepository.get(number).orElseThrow(() -> new NotFoundException("student not found, number=" + number));
+        GetStudentResponse response = new GetStudentResponse();
+        response.name = student.name;
+        return response;
     }
 
     public CreateStudentResponse create(CreateStudentRequest request) {
