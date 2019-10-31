@@ -1,0 +1,9 @@
+rootProject.name = 'changtuo-danson-demo'
+include 'student-service'
+include 'student-service-interface'
+include 'back-office'
+include 'front-end'
+include 'student-site'
+include 'core-ng-async-demo'
+include 'async-service-interface'
+

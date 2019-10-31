@@ -1,0 +1,80 @@
+apply from: file("${rootDir}/gradle/project.gradle")
+
+subprojects {
+    group = 'core.demo'
+    version = '1.0.0'
+
+    repositories {
+        maven {
+            url 'https://neowu.github.io/maven-repo/'
+            content {
+                includeGroupByRegex 'core\\.framework.*'
+            }
+        }
+    }
+}
+
+def coreNGVersion = '7.1.3'
+def hsqlVersion = '2.5.0'
+
+configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
+    apply from: file("${rootDir}/gradle/db-migration.gradle")
+
+    dependencies {
+        runtimeOnly 'mysql:mysql-connector-java:8.0.17'
+    }
+}
+
+configure(subprojects.findAll { it.name.endsWith('-es-migration') }) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        implementation "core.framework:core-ng-search:${coreNGVersion}"
+    }
+    tasks.register('esMigrate') {
+        dependsOn run
+    }
+}
+
+configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+    }
+    tasks.register('mongoMigrate') {
+        dependsOn run
+    }
+}
+
+configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
+    dependencies {
+        implementation "core.framework:core-ng-api:${coreNGVersion}"
+    }
+}
+
+configure([project(':student-service'),
+           project(':student-site'),
+           project(':core-ng-async-demo')]) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        testImplementation "core.framework:core-ng-test:${coreNGVersion}"
+    }
+}
+
+project(':student-service') {
+    dependencies {
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+        implementation project(':student-service-interface')
+        implementation project(':async-service-interface')
+        runtimeOnly 'mysql:mysql-connector-java:8.0.15'
+    }
+}
+
+project(':core-ng-async-demo') {
+    dependencies {
+        implementation project(':async-service-interface')
+        implementation project(':student-service-interface')
+    }
+}

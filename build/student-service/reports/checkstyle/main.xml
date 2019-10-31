@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.20">
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\Main.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\SchoolModule.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\StudentModule.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\StudentServiceApp.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\school\domain\School.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\school\service\SchoolService.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\school\web\SchoolWebServiceImpl.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\student\domain\Student.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\student\service\BOStudentService.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\student\service\StudentService.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\student\web\BOStudentWebServiceImpl.java">
+</file>
+<file name="C:\Danson\core-ng\changtuo-danson-demo\student-service\src\main\java\app\demo\student\web\StudentWebServiceImpl.java">
+</file>
+</checkstyle>
