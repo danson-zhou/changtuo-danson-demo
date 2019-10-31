@@ -68,6 +68,7 @@ project(':student-service') {
         implementation "core.framework:core-ng-mongo:${coreNGVersion}"
         implementation project(':student-service-interface')
         implementation project(':async-service-interface')
+        implementation project(':student-site')
         runtimeOnly 'mysql:mysql-connector-java:8.0.15'
     }
 }
