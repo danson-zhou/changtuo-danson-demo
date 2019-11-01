@@ -19,7 +19,7 @@
 * logprocessor/logcollector
 * elasticsearch/kibana
 * junit5
-###core-ng cd
+### core-ng cd
 * git
 * mysql flyway db migration
 * mongo migration
