@@ -6,4 +6,7 @@ include 'front-end'
 include 'student-site'
 include 'core-ng-async-demo'
 include 'async-service-interface'
+include 'student-service-db-migration'
+include 'student-mongo-migration'
+include 'student-service-mongo-migration'
 

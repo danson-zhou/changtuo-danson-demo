@@ -15,3 +15,11 @@
 * executor
 * scheduler
 * kafka
+### core-ng debug
+* logprocessor/logcollector
+* elasticsearch/kibana
+* junit5
+###core-ng cd
+* git
+* mysql flyway db migration
+* mongo migration

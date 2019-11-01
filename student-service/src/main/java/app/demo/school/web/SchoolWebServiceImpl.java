@@ -3,7 +3,6 @@ package app.demo.school.web;
 import app.demo.api.SchoolWebService;
 import app.demo.api.school.CreateSchoolRequest;
 import app.demo.api.school.CreateSchoolResponse;
-import app.demo.api.school.DeleteSchoolResponse;
 import app.demo.api.school.GetSchoolResponse;
 import app.demo.api.school.ReplaceSchoolResponse;
 import app.demo.api.school.UpdateSchoolResponse;
