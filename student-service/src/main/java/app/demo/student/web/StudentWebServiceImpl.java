@@ -19,8 +19,8 @@ public class StudentWebServiceImpl implements StudentWebService {
     StudentService studentService;
 
     @Override
-    public GetStudentResponse get(Long number) {
-        return studentService.get(number);
+    public GetStudentResponse get(Long id) {
+        return studentService.get(id);
     }
 
     @Override
@@ -29,8 +29,8 @@ public class StudentWebServiceImpl implements StudentWebService {
     }
 
     @Override
-    public UpdateStudentResponse update(Long number, UpdateStudentRequest request) {
-        return studentService.update(number, request);
+    public UpdateStudentResponse update(Long id, UpdateStudentRequest request) {
+        return studentService.update(id, request);
     }
 
     @Override

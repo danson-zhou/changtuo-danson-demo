@@ -35,7 +35,7 @@ configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
     }
 }
 
-configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
+configure(subprojects.findAll { it.name.matches('.*-interface') }) {
     dependencies {
         implementation "core.framework:core-ng-api:${coreNGVersion}"
     }
@@ -56,8 +56,12 @@ project(':student-service') {
         implementation "core.framework:core-ng-mongo:${coreNGVersion}"
         implementation project(':student-service-interface')
         implementation project(':async-demo-service-interface')
-        implementation project(':student-site')
         runtimeOnly 'mysql:mysql-connector-java:8.0.15'
+    }
+}
+project(':student-site') {
+    dependencies {
+        implementation project(':student-service-interface')
     }
 }
 

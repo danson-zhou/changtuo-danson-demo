@@ -30,8 +30,8 @@ public class StudentService {
     @Inject
     Database database;
 
-    public GetStudentResponse get(Long number) {
-        Student student = studentRepository.get(number).orElseThrow(() -> new NotFoundException("student not found, number=" + number));
+    public GetStudentResponse get(Long id) {
+        Student student = studentRepository.get(id).orElseThrow(() -> new NotFoundException("student not found, id=" + id));
         GetStudentResponse response = new GetStudentResponse();
         response.name = student.name;
         return response;
@@ -46,8 +46,8 @@ public class StudentService {
         return new CreateStudentResponse();
     }
 
-    public UpdateStudentResponse update(Long number, UpdateStudentRequest request) {
-        Student student = studentRepository.get(number).orElseThrow(() -> new NotFoundException("student not found, number=" + number));
+    public UpdateStudentResponse update(Long id, UpdateStudentRequest request) {
+        Student student = studentRepository.get(id).orElseThrow(() -> new NotFoundException("student not found, id=" + id));
         student.name = request.name;
 //        student.birthday = null;
 //        studentRepository.partialUpdate(student);

@@ -15,16 +15,14 @@ import core.framework.api.web.service.Path;
 import core.framework.api.web.service.PathParam;
 import core.framework.api.web.service.ResponseStatus;
 
-import java.time.LocalDate;
-
 /**
  * @author Danson
  */
 public interface StudentWebService {
 
     @GET
-    @Path("/student/:number")
-    GetStudentResponse get(@PathParam("number") Long number);
+    @Path("/student/:id")
+    GetStudentResponse get(@PathParam("id") Long id);
 
     @POST
     @Path("/student")
@@ -32,8 +30,8 @@ public interface StudentWebService {
     CreateStudentResponse create(CreateStudentRequest request);
 
     @PUT
-    @Path("/student/:number")
-    UpdateStudentResponse update(@PathParam("number") Long number, UpdateStudentRequest request);
+    @Path("/student/:id")
+    UpdateStudentResponse update(@PathParam("id") Long id, UpdateStudentRequest request);
 
     @PUT
     @Path("/student")
