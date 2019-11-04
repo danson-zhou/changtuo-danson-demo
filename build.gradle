@@ -43,6 +43,7 @@ configure(subprojects.findAll { it.name.matches('.*-interface') }) {
 
 configure([project(':student-service'),
            project(':student-site'),
+           project(':back-office'),
            project(':async-demo-service')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
@@ -59,6 +60,13 @@ project(':student-service') {
         runtimeOnly 'mysql:mysql-connector-java:8.0.15'
     }
 }
+
+project(':back-office') {
+    dependencies {
+        implementation project(':student-service-interface')
+    }
+}
+
 project(':student-site') {
     dependencies {
         implementation project(':student-service-interface')
