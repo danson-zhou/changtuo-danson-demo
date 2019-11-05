@@ -4,6 +4,9 @@ import app.demo.api.BOStudentWebService;
 import app.demo.api.student.BOCreateStudentRequest;
 import app.demo.api.student.BOCreateStudentResponse;
 import app.demo.api.student.BOGetStudentResponse;
+import app.web.ajax.BOCreateStudentAJAXRequest;
+import app.web.ajax.BOCreateStudentAJAXResponse;
+import app.web.ajax.BOGetStudentAJAXResponse;
 import core.framework.inject.Inject;
 
 /**
@@ -13,11 +16,14 @@ public class BOStudentService {
     @Inject
     BOStudentWebService boStudentWebService;
 
-    public BOGetStudentResponse get(Long id) {
-        return boStudentWebService.get(id);
+    public BOGetStudentAJAXResponse get(Long id) {
+        BOGetStudentResponse response = boStudentWebService.get(id);
+        return new BOGetStudentAJAXResponse();
     }
 
-    public BOCreateStudentResponse create(BOCreateStudentRequest request) {
-        return boStudentWebService.create(request);
+    public BOCreateStudentAJAXResponse create(BOCreateStudentAJAXRequest request) {
+        BOCreateStudentRequest boCreateStudentRequest = new BOCreateStudentRequest();
+        BOCreateStudentResponse response = boStudentWebService.create(boCreateStudentRequest);
+        return new BOCreateStudentAJAXResponse();
     }
 }

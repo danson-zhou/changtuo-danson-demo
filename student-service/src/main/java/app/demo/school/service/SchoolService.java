@@ -13,7 +13,6 @@ import core.framework.inject.Inject;
 import core.framework.mongo.MongoCollection;
 import core.framework.mongo.Query;
 import org.bson.conversions.Bson;
-import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +28,7 @@ public class SchoolService {
 
     public CreateSchoolResponse create(CreateSchoolRequest request) {
         School school = new School();
-        school.id = new ObjectId();
+        school.id = "1";
         school.name = "changtuo";
         school.address = "xiamen";
         Teacher teacher = new Teacher();
@@ -42,7 +41,7 @@ public class SchoolService {
 
     public ReplaceSchoolResponse replace() {
         School school = new School();
-        school.id = new ObjectId();
+        school.id = "1";
         school.address = "xiamenhuli";
         collection.replace(school);
         return new ReplaceSchoolResponse();
@@ -66,7 +65,7 @@ public class SchoolService {
         return new UpdateSchoolResponse();
     }
 
-    public void delete(ObjectId id) {
+    public void delete(String id) {
         collection.delete(id);
     }
 

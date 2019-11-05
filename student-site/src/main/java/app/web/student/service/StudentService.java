@@ -4,6 +4,9 @@ import app.demo.api.StudentWebService;
 import app.demo.api.student.CreateStudentRequest;
 import app.demo.api.student.CreateStudentResponse;
 import app.demo.api.student.GetStudentResponse;
+import app.web.ajax.CreateStudentAJAXRequest;
+import app.web.ajax.CreateStudentAJAXResponse;
+import app.web.ajax.GetStudentAJAXResponse;
 import core.framework.inject.Inject;
 
 /**
@@ -13,12 +16,15 @@ public class StudentService {
     @Inject
     StudentWebService studentWebService;
 
-    public GetStudentResponse get(Long id) {
-        return studentWebService.get(id);
+    public GetStudentAJAXResponse get(Long id) {
+        GetStudentResponse response = studentWebService.get(id);
+        return new GetStudentAJAXResponse();
     }
 
-    public CreateStudentResponse create(CreateStudentRequest request) {
-        return studentWebService.create(request);
+    public CreateStudentAJAXResponse create(CreateStudentAJAXRequest request) {
+        CreateStudentRequest createStudentRequest = new CreateStudentRequest();
+        CreateStudentResponse response = studentWebService.create(createStudentRequest);
+        return new CreateStudentAJAXResponse();
     }
 
 }

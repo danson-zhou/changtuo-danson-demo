@@ -5,7 +5,6 @@ import core.framework.api.validate.NotNull;
 import core.framework.mongo.Collection;
 import core.framework.mongo.Field;
 import core.framework.mongo.Id;
-import org.bson.types.ObjectId;
 
 /**
  * @author Danson
@@ -13,7 +12,7 @@ import org.bson.types.ObjectId;
 @Collection(name = "schools")
 public class School {
     @Id
-    public ObjectId id;
+    public String id;
 
     @NotNull
     @NotBlank
@@ -26,5 +25,6 @@ public class School {
 
     @Field(name = "teacher")
     public Teacher teacher;
+
 
 }

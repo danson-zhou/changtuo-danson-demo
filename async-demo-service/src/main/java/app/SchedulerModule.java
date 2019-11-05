@@ -15,7 +15,8 @@ import java.time.ZoneId;
 public class SchedulerModule extends Module {
     @Override
     protected void initialize() {
-        schedule().timeZone(ZoneId.of("Asia/Shanghai"));
+        ZoneId localZoneId = ZoneId.systemDefault();
+        schedule().timeZone(localZoneId);
 
         Job fixedRateJob = new PrintJob("fixedRateJob per 5 seconds");
         schedule().fixedRate("fixed-rate-job", fixedRateJob, Duration.ofSeconds(5));

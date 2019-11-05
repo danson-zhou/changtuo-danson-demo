@@ -10,6 +10,7 @@ import app.demo.api.student.UpdateStudentRequest;
 import app.demo.api.student.UpdateStudentResponse;
 import app.demo.student.service.StudentService;
 import core.framework.inject.Inject;
+import core.framework.log.ActionLogContext;
 
 /**
  * @author Danson
@@ -20,6 +21,8 @@ public class StudentWebServiceImpl implements StudentWebService {
 
     @Override
     public GetStudentResponse get(Long id) {
+        ActionLogContext.put("id", id);
+
         return studentService.get(id);
     }
 

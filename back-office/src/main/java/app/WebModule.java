@@ -1,9 +1,9 @@
 package app;
 
 import app.demo.api.BOStudentWebService;
-import app.web.ajax.BOStudentAjaxWebService;
+import app.web.ajax.BOStudentAJAXWebService;
 import app.web.student.service.BOStudentService;
-import app.web.student.web.BOStudentAjaxWebServiceImpl;
+import app.web.student.web.BOStudentAJAXWebServiceImpl;
 import core.framework.module.Module;
 
 /**
@@ -15,6 +15,6 @@ public class WebModule extends Module {
         http().httpPort(8000);
         bind(BOStudentService.class);
         api().client(BOStudentWebService.class, "http://localhost:8081");
-        api().service(BOStudentAjaxWebService.class, bind(BOStudentAjaxWebServiceImpl.class));
+        api().service(BOStudentAJAXWebService.class, bind(BOStudentAJAXWebServiceImpl.class));
     }
 }
