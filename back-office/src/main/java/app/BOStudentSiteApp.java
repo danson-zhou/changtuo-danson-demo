@@ -1,6 +1,5 @@
 package app;
 
-import app.WebModule;
 import core.framework.module.App;
 
 /**

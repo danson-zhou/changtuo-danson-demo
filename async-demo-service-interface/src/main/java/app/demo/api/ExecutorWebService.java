@@ -9,9 +9,9 @@ import core.framework.api.web.service.Path;
 public interface ExecutorWebService {
     @GET
     @Path("/async/normal")
-    public void normal();
+    void normal();
 
     @GET
     @Path("/async/delayed")
-    public void delayed();
+    void delayed();
 }

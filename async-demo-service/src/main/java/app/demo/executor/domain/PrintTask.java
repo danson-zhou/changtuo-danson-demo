@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class PrintTask implements Task {
 
     private final Logger logger = LoggerFactory.getLogger(PrintTask.class);
-    private String message;
+    private final String message;
 
     public PrintTask(String message) {
         this.message = message;
