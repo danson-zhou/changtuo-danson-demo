@@ -38,7 +38,9 @@
   
 - flyway
 
-  - mysql db migrationi
+  - mysql db migration
+  - sql文件名小写，以执行动作命名；
+  - flyway先执行v模式sql，之后执行r模式sql
 
 - 其他
   - gradle
@@ -63,7 +65,6 @@
   - sys存放系统环境变量；
   - app存放第三方环境变量
 - action的概念
-  - 
 - 服务的拆分：
   - 部分服务用户访问量大，需要更多的资源支持 ；
   - 核心和非核心，如天猫订单服务（核心服务需要稳定运行）、积分游戏服务（非核心稳定性要求不高）；
@@ -72,4 +73,5 @@
   - 日志收集没有采用logstash,主要是系统部署方式不适合；
   - logcollector将日志发送到kafka队列，logprocessor解析日志并按格式存储到es服务器；
   - kibana负责日志信息的展示
-
+ - controller和webservice区别
+   - controller：当url有页面跳转时尽量用controller，仅有数据请求时尽量用webservice
