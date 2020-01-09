@@ -7,7 +7,6 @@ import core.framework.util.Randoms;
 
 import java.time.Duration;
 import java.time.LocalTime;
-import java.time.ZoneId;
 
 /**
  * @author Danson
@@ -15,8 +14,8 @@ import java.time.ZoneId;
 public class SchedulerModule extends Module {
     @Override
     protected void initialize() {
-        ZoneId localZoneId = ZoneId.systemDefault();
-        schedule().timeZone(localZoneId);
+//        ZoneId localZoneId = ZoneId.systemDefault();
+//        schedule().timeZone(localZoneId);
 
         Job fixedRateJob = new PrintJob("fixedRateJob per 5 seconds");
         schedule().fixedRate("fixed-rate-job", fixedRateJob, Duration.ofSeconds(5));
